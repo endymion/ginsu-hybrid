@@ -10,9 +10,19 @@ Ginsu::Knife.configure do |ginsu|
     ginsu.slices << { :search => '#footer', :static => 'index.html', :partial => 'footer' }
 
     ginsu.links << { :static => 'images' }
-    
+    ginsu.links << { :static => 'stylesheets' }
+
 end
 CODE
 
+# Create graphic design and static web site directories.
 run('mkdir static')
+run('mkdir static/images')
+run('mkdir static/stylesheets')
 run('mkdir design')
+
+# Add Blueprint to the static web site directory, which gets linked into the Rails site.
+if yes?("Include the Blueprint CSS framework?")
+  git :clone => 'git://github.com/joshuaclayton/blueprint-css.git'
+  run('mv blueprint-css static/stylesheets')
+end
