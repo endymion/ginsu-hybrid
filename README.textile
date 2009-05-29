@@ -1,6 +1,6 @@
 h1. Ginsu Hybrid
 
-This is an example of a hybrid web site that's designed in Dreamweaver and powered by Ruby on Rails.  To update the design, you update the static Dreamweaver files.  To update the behavior of the web site, you update the Rails application.  "Ginsu":http://github.com/endymion/ginsu/tree/master handles integrating the two.
+This is an example of a hybrid web site that's designed in Photoshop, laid out in Dreamweaver, and powered by Ruby on Rails.  To update the design, you update the static Dreamweaver files.  To update the behavior of the web site, you update the Rails application.  "Ginsu":http://github.com/endymion/ginsu/tree/master handles integrating the two.
 
 You can use Ginsu Hybrid as a starting point for your team's web site projects.  It comes with an example Dreamweaver layout template, a few pages based on that layout, and a Rails site that uses those files with an example Ginsu configuration file.  Ginsu is configured to extract a Rails layout template from the Dreamweaver template, and Rails partial templates from library assets in the Dreamweaver project.
 
@@ -36,7 +36,7 @@ When you run this task, Ginsu will create layout templates and partials in your 
 
 h1. Best practices
 
-h2. Standard asset directories: images/, stylesheets/, javascripts
+h2. Standard asset directories: images/, stylesheets/, javascripts/
 
 Always store your images in an "images" folder under your static web site.  Always store your stylesheets in "stylesheets".  Always store your JavaScript files in "javascripts".
 
