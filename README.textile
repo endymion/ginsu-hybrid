@@ -19,7 +19,7 @@ h1. Retrofitting
 
 You can apply the Ginsu Hybrid template to an existing Rails application:
 
-<pre><code>rake rails:template LOCATION=~projects/ginsu-hybrid/rails-template.rb
+<pre><code>rake rails:template LOCATION=~projects/ginsu-hybrid/rails-template.rb</code></pre>
 
 When you do this, your existing Rails application will get:
 
