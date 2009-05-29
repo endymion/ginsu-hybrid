@@ -8,9 +8,52 @@ h1. Getting Started
 
 The best way to use this project to get your own project started is to clone a copy of Ginsu Hybrid from GitHub:
 
-<code><pre>cd ~projects
-git clone git://github.com/endymion/ginsu-hybrid.git</pre></code>
+<pre><code>cd ~projects
+git clone git://github.com/endymion/ginsu-hybrid.git</code></pre>
 
 Then use the Rails template in Ginsu Hybrid to create a new Rails project:
 
-<code><pre>rails new_site -m ~projects/ginsu-hybrid/rails-template.rb</pre></code>
+<pre><code>rails new_site -m ~projects/ginsu-hybrid/rails-template.rb</code></pre>
+
+h1. Retrofitting
+
+You can apply the Ginsu Hybrid template to an existing Rails application:
+
+<pre><code>rake rails:template LOCATION=~projects/ginsu-hybrid/rails-template.rb
+
+When you do this, your existing Rails application will get:
+
+* the Ginsu plugin
+* a new static/ folder in the root of the Rails app, containing a sample Dreamweaver project
+* a Ginsu configuration in config/initializers/ginsu.rb
+* an example design/ folder containing one Photoshop .psd file per layout.
+
+The Ginsu plugin provides a new Rake task:
+
+<pre><code>rake ginsu:slice</code></pre>
+
+When you run this task, Ginsu will create layout templates and partials in your Rails application.  The sample Ginsu configuration creates some new files in your app/views hierarchy, so make sure that you don't overwrite existing layout templates or partials in your application.
+
+h1. Best practices
+
+h2. Use the same name for each layout everywhere.
+
+h3. From a comp: master.psd
+
+If your site's master layout starts in Photoshop as a comp, then put it in your design/ folder and call it "master.psd".
+
+h3. ...to slices: static/images/master/images
+
+When you slice your master layout into a Dreamweaver layout template, use Photoshop's "Save for Web & Devices" and save the slices in your Dreamweaver project under your static/images directory.  Save them in a directory named for the layout, static/images/master.  Photoshop will save your slice images in static/images/master/images.
+
+h3. ...to a Dreamweaver layout: static/Templates/master.dwt
+
+You can either "import your Photoshop layout into Dreamweaver":http://www.google.com/search?q=import+photoshop+layout+into+dreamweaver or you can create a new layout in Dreamweaver.  Either way, you want your template file to be called master.dwt
+
+h3. ...to a Rails layout: app/views/layouts/master.html.erb
+
+The example Ginsu configuration creates a Rails layout template with the same name, "master", as the original graphic designer's comp file from Photoshop.  This keeps everything clear and consistent through the entire workflow.
+
+h2. Use a design/ directory to eliminate design files from deployments
+
+You may want your .psd files to be included in your Git repository but not in your deployments to your production server, so the design/ directory allows you to easily exclude your .psd files from your deployments.  Ginsu Hybrid includes a sample design/ directory.
