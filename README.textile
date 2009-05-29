@@ -36,6 +36,12 @@ When you run this task, Ginsu will create layout templates and partials in your 
 
 h1. Best practices
 
+h2. Standard asset directories: images/, stylesheets/, javascripts
+
+Always store your images in an "images" folder under your static web site.  Always store your stylesheets in "stylesheets".  Always store your JavaScript files in "javascripts".
+
+These names match the standard locations for these things in a Rails application, where they are always found in "public/images/", "public/stylesheets", and "public/javascripts", in every Rails application.  If you use the same names in your static Dreamweaver site then Ginsu can simply link to your static assets from Rails application's "public" folder.  This way you can add new images to the static site with Dreamweaver, and they will be visible at the same relative URLs from HTML in the Rails application.
+
 h2. Use the same name for each layout everywhere.
 
 h3. From a comp: master.psd
@@ -56,4 +62,4 @@ The example Ginsu configuration creates a Rails layout template with the same na
 
 h2. Use a design/ directory to eliminate design files from deployments
 
-You may want your .psd files to be included in your Git repository but not in your deployments to your production server, so the design/ directory allows you to easily exclude your .psd files from your deployments.  Ginsu Hybrid includes a sample design/ directory.
+You may want your .psd files to be included in your Git repository but not in your deployments to your production server, so the design/ directory allows you to easily exclude your .psd files from your deployments.  Ginsu Hybrid includes a sample design/ directory.  All of your Photoshop .psd files should be stored there.
