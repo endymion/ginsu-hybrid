@@ -1,3 +1,16 @@
 h1. Ginsu Hybrid
 
 This is an example of a hybrid web site that's designed in Dreamweaver and powered by Ruby on Rails.  To update the design, you update the static Dreamweaver files.  To update the behavior of the web site, you update the Rails application.  "Ginsu":http://github.com/endymion/ginsu/tree/master handles integrating the two.
+
+You can use Ginsu Hybrid as a starting point for your team's web site projects.  It comes with an example Dreamweaver layout template, a few pages based on that layout, and a Rails site that uses those files with an example Ginsu configuration file.  Ginsu is configured to extract a Rails layout template from the Dreamweaver template, and Rails partial templates from library assets in the Dreamweaver project.
+
+h1. Getting Started
+
+The best way to use this project to get your own project started is to clone a copy of Ginsu Hybrid from GitHub:
+
+<code><pre>cd ~projects
+git clone git://github.com/endymion/ginsu-hybrid.git</pre></code>
+
+Then use the Rails template in Ginsu Hybrid to create a new Rails project:
+
+<code><pre>rails new_site -m ~projects/ginsu-hybrid/rails-template.rb</pre></code>
